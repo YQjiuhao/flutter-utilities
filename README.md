@@ -1,1 +1,6 @@
-# flutter-utilities
+# utilities
+
+对一些常用的工具进行封装
+
+暂时没时间写文档~~~
+
