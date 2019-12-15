@@ -16,7 +16,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   convert: ^2.1.1
   crypto: ^2.1.2
-  intl: ^0.15.2
+  intl: ^0.16.0
   flutter_statusbarcolor: ^0.2.3
   transparent_image: ^1.0.0
   flutter_datetime_picker: ^1.2.1
