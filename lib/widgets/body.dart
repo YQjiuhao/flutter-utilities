@@ -12,7 +12,8 @@ import '../ux/ux.dart';
 
 class Body<T> extends StatefulWidget {
   Body({
-    @required this.builder,
+    this.builder,
+    this.child,
     this.onInit,
     this.message,
     this.useHUD = true,
@@ -38,6 +39,8 @@ class Body<T> extends StatefulWidget {
   final bool useHUD;
 
   final bool autoKeep;
+
+  final Widget child;
 
   @override
   BodyState<T> createState() => BodyState<T>();
@@ -78,9 +81,9 @@ class BodyState<T> extends State<Body<T>> with AutomaticKeepAliveClientMixin {
             if (isNotNull(widget.onInit) && isNull(snaphot.data)) {
               return isNull(snaphot.data)
                   ? _EmptyView(initiled: _init, message: widget.message)
-                  : widget.builder(ctx, snaphot);
+                  : widget.child ?? widget.builder(ctx, snaphot);
             }
-            return widget.builder(ctx, snaphot);
+            return widget.child ?? widget.builder(ctx, snaphot);
           },
         ),
         hud,
